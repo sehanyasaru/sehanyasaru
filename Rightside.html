@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My portfolio(Sehan Yasaru)</title>
+<meta name=" description" content="This is my own port folio web site regarding my personal information,my education staus,my works and how the users can directly contact with me">
+<meta name="keywords"content="sehan yasaru">
+<meta name="author" content="Sehan yasaru">
+<meta charset="UTF-8">
+ <style>
+.slider{
+  border-radius: 10px;
+  overflow: hidden;
+  width:600px;
+  height: 700px;
+  border: 7px solid white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+}
+.footer{
+   color:white;
+        text-shadow: 0 0 8px #000;
+}
+.slides{
+  width:600%;
+  height: 700px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width:600px;
+  height:700px;
+}
+
+
+
+.navigation-manual{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin-top: -40px;
+}
+
+.manual-btn{
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+  border: 3px solid white;
+  padding: 5px;
+  width: 30px;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: #c43af3;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+#radio4:checked ~ .first{
+  margin-left: -80%;
+}
+
+
+
+.navigation-auto{
+  position: absolute;
+  justify-content: center;
+  margin-top: 460px;
+  display: flex;
+  width: 800px;
+}
+
+.navigation-auto div{
+  border-radius: 10px;
+  transition: 1s;
+  border: 3px solid #c43af3;
+  padding: 5px;
+  width: 30px;
+}
+h3 {
+text-align: left; 
+color:black;
+ width:15%;
+ background-color:#ff4d4d;
+
+}
+
+.p2{
+background-color:black;
+}
+.p3{
+background-color:black;
+}
+.p4{
+background-color:black;
+}
+.form{
+font-family: "Montserrat", Comic Sans MS;
+color:white;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+background-image:url("pic4.jpg");
+background-size: cover;
+  font-family: Helvetica, sans-serif;
+color:white;
+font-size:18px;
+}
+.navi {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #333;
+}
+
+.hyper {
+  float: right;
+}
+
+.hyper a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.hyper a:hover {
+  background-color: #111;
+}
+
+.butt1{
+background-color:#6495ed;
+color:white;
+font-size:18px;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: grey;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+color:black;
+}
+
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: grey;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+
+.right {
+  left: 50%;
+}
+
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+  left: 31px;
+  }
+  
+
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+ 
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+
+  .right {
+  left: 0%;
+  }
+            .debug
+            { border:1px solid #BADA55; }
+
+
+</style>
+<script src="https://kit.fontawesome.com/8c6f2d5117.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<ul class="navi">
+<li class="hyper"><a class="link"style="text-decoration:none"  href="http://localhost/ContactUs/index.php" target="_blank">Contact me</a></li>
+
+<li class="hyper"><a class="link"style="text-decoration:none"  href="#3">My Skills</a></li>
+<li class="hyper"><a class="link"style="text-decoration:none"  href="#2">Education</a></li>
+<li class="hyper"><a class="link"style="text-decoration:none"  href="#1">About me</a></li>
+</ul>
+<h3 id="1">ABOUT ME</h3>
+<div align="right">
+<button class="butt1"type="submit" onclick="process()"><i class="fa-solid fa-download"></i>&nbsp;&nbsp;Download the cv</button>
+</div>
+<script>
+function process(){
+ window.open("MY CV.html");
+}
+</script>
+<br>
+<p align="left">Hello! I'm Sehan Yasaru Rathnasooriya.I'm from Kalutara south Sri Lanka. Now I'm undergraduate at university of Sir 
+John Kotelawala in Sri Lanka. I’m an undergraduate student of
+ bachelor of science in computer Engineering following 4 years degree programme.I want to be a professional hardware engineer after finishing my degree programme.
+</p>
+
+<br>
+<adress>
+<i class="fa-solid fa-cake-candles"></i>&nbsp;&nbsp;<b>Birthday:</b> October 02,2000</label><br><br>
+<p><u>Hobbies</u></p>
+<i class="fa-solid fa-hands"></i>&nbsp;&nbsp;<b>singing</b>&nbsp;&nbsp;&nbsp;&nbsp;
+<i class="fa-solid fa-tv"></i>&nbsp;&nbsp;<b>watching television</b><br><br>
+<i class="fa-solid fa-person-biking"></i>&nbsp;&nbsp;<b>cycling</b>&nbsp;&nbsp;&nbsp;&nbsp;
+<i class="fa-solid fa-chess"></i>&nbsp;&nbsp;<b>playing chess</b><br><br>
+</adress>
+<div class="slider">
+  <div class="slides">    
+<input type="radio" name="radio-btn" id="radio1">
+     <input type="radio" name="radio-btn" id="radio2">
+     <input type="radio" name="radio-btn" id="radio3">
+     <input type="radio" name="radio-btn" id="radio4">
+     <input type="radio" name="radio-btn" id="radio5">
+   <div class="slide first">
+     <img src="image5.jpg">
+   </div>
+   <div class="slide">
+      <img src="image4.jpg">
+   </div>
+   <div class="slide">
+      <img src="image1.jpg">
+   </div>
+   <div class="slide">
+      <img src="image6.jpg">
+   </div>
+ <div class="slide">
+      <img src="image7.jpg">
+   </div>
+ </div>
+  <div class="navigation-manual">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+    <label for="radio4" class="manual-btn"></label>
+    <label for="radio5" class="manual-btn"></label>
+  </div>
+</div> 
+
+
+
+    <script type="text/javascript">
+
+var counter = 1;
+ setInterval(function(){
+   document.getElementById('radio' + counter).checked = true;
+   counter++;
+     if(counter > 4){
+       counter = 1;
+     }
+ }, 5000);
+
+    </script>
+</right>
+<br>
+<hr></hr>
+<br>
+<h3 id="2">EDUCATION</h3>
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>2006-2010</h2>
+      <p><ul>
+<li>School education<br><b>Kalutara Vidyalaya National School</b>
+<ul>
+<li>I have passed grade 5 scholarship examination which was held in 2010</li>
+</ul>
+</ul></p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2016</h2>
+      <p><ul>
+<li>I have passed grade 11 GCE ordinory level examination in 2016</li>
+<ul>
+<li>Mathematics -<b>A</b></li>
+<li>English-<b>B</b></li>
+<li>Sinhala Language-<b>A</b></li>
+<li>Science-<b>A</b></li>
+<li>English Literary Text-<b>B</b></li>
+<li>Information Communication Technology-<b>A</b></li>
+<li>Buisness and Accounting studies-<b>A</b></li>
+<li>Buddhisam-<b>A</b></li>
+<li>History-<b>A</b></li>
+</ul>
+</ul>
+
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2019</h2>
+    <p>I have completed the diploma in English in British way English Academy in Sri Lanka by getting Advanced passes for each subject.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>2020</h2>
+      <p> </p>
+<li>I have passed grade 13 GCE Advanced level Examination in 2020 and qualified for the university entrance.</li>
+<ul>
+<li>Combined mathematics-<b>B</b></li>
+<li>Chemistry-<b>C</b></li>
+<li>Physics-<b>C</b></li>
+</ul>
+</ul>
+</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>2021</h2>
+      <p><ul>
+<li>Dip. in Electronics <br><b>Ceylon German Technical Training institute Sri Lanka.</b></li>
+<ul>
+<li>I have successfully completed the diploma in electronics in <a style="text-decoration:none" href="http://www.cgtti.lk" target="_blank">CGTTI</a> and now I have the skills to create PCB circuits using <b>Eagle</b> Software and can easily apply them to the industry.</li></p></li></p>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<ul>
+<li>Present|  Bsc Computer Engineering<br><b>University of KD <a style="text-decoration:none" href="http://www.kdu.ac.lk"  target="_blank">KDU</a></b></li>
+<br>
+<p>I'm first year undergraduate student of computer engineering I choosed this degree because I'm interested in computer hardwares,electronics and computer programming.As an example I'm good at following computer programming languages.<br><br>
+<hr>
+<br>
+<h3 id="3">My skills</h3>
+<p>I'm good at folowing fields</p>
+    <p>Photoshop</p>
+<progress class="p2" value="90" max="100"style="height:28px;width:95%"></progress><br>
+    <p>Web Design</p>
+<progress class="p3" value="95" max="100"style="height:28px;width:95%"></progress><br>
+    <p>Programming</p>
+<progress class="p4" value="90" max="100"style="height:28px;width:95%"></progress><br><br><br>
+  <u><h4>My Works(Photoshop)</h4></u>
+    <div class="row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="image1.jpg" style="width:30%">
+        <img src="image2.jpg"style="width:30%">
+        <img src="image3.jpg" style="width:30%">
+        <img src="imag.jpg" style="width:30%">
+        <img src="imag2.jpg"style="width:30%">
+        <img src="imag3.jpg" style="width:30%">
+      </div>
+<p>Now I'm following my first year hardware group project regarding <b> object detection</b>  to identify the person properly that someone can't reach. So, I mount this circuit to a handmade toy car and this car can avoid from obstacles ex: (barrios, wet fields etc.).
+This device can easily be applicable for covid 19 wards where the outsiders can't close to the patient and this device can close to the related patient and can provide a clear status of the patient.
+Not only that this car can be applicable for the security field to secure the area.I should handover this project within three months with my group members.</p>
+<hr>
+<h3 id="4">Contact me</h3>
+<adress>
+<i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;<b>Location:</b>Nandana,Mankada,Bombuwala,Sri Lanka</label><br><br>
+<i class="fa-solid fa-square-envelope"></i>&nbsp;&nbsp;<b>E mail:</b> <a style="text-decoration:none"  href="sehanyasaru@gmail.com">  sehanyasaru@gmail.com</a></label><br><br>
+<i class="fa-solid fa-phone"></i>&nbsp;&nbsp;<b>Phone:</b>    0711802106</label><br><br><br>
+</adress>
+    <br>
+<br>
+  <footer class="footer">
+<center>
+    <a href="https://www.facebook.com/sehan.yasaru.1" style="text-decoration:none"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+<a href="https://www.instagram.com/se_yas_12" style="text-decoration:none"  target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://sehanyasaru@gmail.com" style="text-decoration:none"  target="_blank"><i class="fa-solid fa-envelope"></i></a>
+</center>
+<br>
+<center>&copy; Copyright 2022-2050 by Refsnes Data. All Rights Reserved.</footer></center>
+  </footer>
+</body>
+</html>
